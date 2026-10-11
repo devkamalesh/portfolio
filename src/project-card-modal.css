@@ -1,0 +1,239 @@
+/* Add this to the end of client/src/styles.css */
+.project-card-clickable {
+    cursor: pointer;
+}
+
+.project-image-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image-placeholder {
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #42f5a1;
+    background: radial-gradient(circle at top right, #123d30, #07110f 65%);
+    letter-spacing: .12em;
+    font-size: .72rem;
+}
+
+.view-images-button {
+    position: absolute;
+    z-index: 2;
+    left: 14px;
+    bottom: 14px;
+    padding: 9px 12px;
+    border: 1px solid rgba(66, 245, 161, .55);
+    border-radius: 7px;
+    background: rgba(4, 14, 11, .88);
+    color: #42f5a1;
+    font: inherit;
+    font-size: .76rem;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+}
+
+.view-images-button:hover {
+    background: #42f5a1;
+    color: #06110d;
+}
+
+.project-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.project-summary-button,
+.visit-project-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(66, 245, 161, .32);
+    border-radius: 7px;
+    padding: 9px 12px;
+    background: transparent;
+    color: #42f5a1;
+    text-decoration: none;
+    font: inherit;
+    font-size: .75rem;
+    cursor: pointer;
+}
+
+.visit-project-button {
+    background: #42f5a1;
+    color: #06110d;
+    font-weight: 700;
+}
+
+.project-summary-button:hover,
+.visit-project-button:hover {
+    transform: translateY(-1px);
+}
+
+.project-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(0, 0, 0, .78);
+    backdrop-filter: blur(9px);
+    overflow-y: auto;
+}
+
+.project-modal {
+    position: relative;
+    width: min(760px, 100%);
+    max-height: min(88vh, 900px);
+    overflow-y: auto;
+    padding: clamp(22px, 4vw, 36px);
+    border: 1px solid rgba(66, 245, 161, .3);
+    border-radius: 16px;
+    background: #08120f;
+    color: #e9f4ef;
+    box-shadow: 0 25px 90px rgba(0, 0, 0, .55);
+}
+
+.project-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #254238;
+    border-radius: 8px;
+    background: #0d1d17;
+    color: #e9f4ef;
+    cursor: pointer;
+}
+
+.project-modal-kicker {
+    margin-bottom: 10px;
+    color: #42f5a1;
+    font-size: .75rem;
+    letter-spacing: .15em;
+}
+
+.project-modal h2 {
+    margin: 0 42px 14px 0;
+    font-size: clamp(1.6rem, 4vw, 2.3rem);
+}
+
+.project-modal-description {
+    color: #b7c9c0;
+    line-height: 1.75;
+}
+
+.project-modal-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 22px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #20352c;
+}
+
+.project-modal-tabs button {
+    border: 1px solid #254238;
+    border-radius: 7px;
+    padding: 9px 13px;
+    background: #0d1d17;
+    color: #b7c9c0;
+    cursor: pointer;
+}
+
+.project-modal-tabs button.active {
+    border-color: #42f5a1;
+    color: #42f5a1;
+}
+
+.project-modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.project-modal-gallery img {
+    display: block;
+    width: 100%;
+    max-height: 340px;
+    object-fit: contain;
+    border: 1px solid #254238;
+    border-radius: 9px;
+    background: #030806;
+}
+
+.project-modal-gallery p {
+    color: #a4b8ae;
+}
+
+.project-modal-highlights {
+    display: grid;
+    gap: 10px;
+    padding-left: 20px;
+    color: #c6d7ce;
+    line-height: 1.6;
+}
+
+.project-modal-highlights li::marker {
+    color: #42f5a1;
+}
+
+.project-modal-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.project-modal-stack span {
+    padding: 6px 9px;
+    border: 1px solid #254238;
+    border-radius: 6px;
+    color: #42f5a1;
+    font-size: .75rem;
+}
+
+.project-modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.project-private-note {
+    color: #9bb0a5;
+    font-size: .82rem;
+}
+
+@media (max-width: 560px) {
+    .project-modal-backdrop {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .project-modal {
+        max-height: 95vh;
+        margin: auto 0;
+        padding: 22px 16px;
+    }
+
+    .project-modal-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card-actions>* {
+        flex: 1;
+    }
+}
